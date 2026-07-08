@@ -1,0 +1,10 @@
+
+import { baseProcedure, createTRPCRouter } from '../init';
+
+export const appRouter = createTRPCRouter({
+    health: baseProcedure.query(async () => {
+        await new Promise((resolve) => setTimeout(resolve, 5000));
+        return { status: "ok", code: 123 };
+    }),
+});
+export type appRouter = typeof appRouter;

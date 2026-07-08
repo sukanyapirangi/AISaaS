@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/db"
 
-export default async function TestPage() {
+export default async function TestDbPage() {
     const voices = await prisma.voice.findMany()
 
     return (
